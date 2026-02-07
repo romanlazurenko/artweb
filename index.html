@@ -18,6 +18,27 @@
             <a href="/" class="logo" aria-label="ArtWeb Home">
                 <img src="./assets/img/logo.svg" alt="ArtWeb Logo" class="logo-img">
             </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav" aria-label="Main navigation">
+                <ul class="desktop-nav__list">
+                    <li><a href="#services" class="desktop-nav__link">Services</a></li>
+                    <li><a href="#projects" class="desktop-nav__link">Projects</a></li>
+                    <li><a href="#contact" class="desktop-nav__link">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <!-- Desktop Social Links -->
+            <div class="desktop-nav__social">
+                <a href="https://www.instagram.com/artwebdesignstudio" class="desktop-nav__social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/img/instagram.svg" alt="" class="desktop-nav__social-icon">
+                </a>
+                <a href="mailto:studioartwebstudio@gmail.com" class="desktop-nav__social-link" aria-label="Email">
+                    <img src="./assets/img/email.svg" alt="" class="desktop-nav__social-icon">
+                </a>
+            </div>
+
+            <!-- Mobile Burger Menu -->
             <button class="burger-menu" aria-label="Toggle navigation menu" aria-expanded="false"
                 aria-controls="main-nav">
                 <span class="burger-line"></span>
@@ -47,7 +68,9 @@
     <main>
         <section class="hero" aria-labelledby="hero-title">
             <div class="hero__background">
-                <!-- Video placeholder - add video here later -->
+                <video class="hero__video" autoplay muted loop playsinline aria-hidden="true">
+                    <source src="./assets/video.mp4" type="video/mp4">
+                </video>
                 <div class="hero__overlay"></div>
             </div>
             <div class="container hero__container">
@@ -72,8 +95,13 @@
                     <!-- Design Card -->
                     <article class="service-card">
                         <div class="service-card__image">
-                            <img src="./assets/img/services-bg-mobile-1.jpg"
-                                alt="Web design visualization with futuristic interface" loading="lazy">
+                            <picture>
+                                <source media="(min-width: 1280px)" srcset="./assets/img/services-bg-1.jpg">
+                                <source media="(min-width: 1920px)" srcset="./assets/img/services-bg-1-2k.jpg">
+                                <source media="(min-width: 3840px)" srcset="./assets/img/services-bg-1-4k.jpg">
+                                <img src="./assets/img/services-bg-mobile-1.jpg"
+                                    alt="Web design visualization with futuristic interface" loading="lazy">
+                            </picture>
                         </div>
                         <div class="service-card__content">
                             <h3 class="service-card__title">Design</h3>
@@ -93,8 +121,13 @@
                     <!-- Development Card -->
                     <article class="service-card">
                         <div class="service-card__image">
-                            <img src="./assets/img/services-bg-mobile-2.jpg"
-                                alt="Web development visualization with code and wireframe" loading="lazy">
+                            <picture>
+                                <source media="(min-width: 3840px)" srcset="./assets/img/services-bg-2-4k.jpg">
+                                <source media="(min-width: 1920px)" srcset="./assets/img/services-bg-2-2k.jpg">
+                                <source media="(min-width: 1280px)" srcset="./assets/img/services-bg-2.jpg">
+                                <img src="./assets/img/services-bg-mobile-2.jpg"
+                                    alt="Web development visualization with code and wireframe" loading="lazy">
+                            </picture>
                         </div>
                         <div class="service-card__content">
                             <h3 class="service-card__title">Development</h3>
@@ -157,53 +190,61 @@
                 </div>
 
                 <div class="contact__image">
-                    <img src="./assets/img/contact-bg-mob.jpg" alt="Futuristic visualization of digital interface"
-                        loading="lazy">
+                    <picture>
+                        <source media="(min-width: 1280px)" srcset="./assets/img/contact-bg.jpg">
+                        <source media="(min-width: 1920px)" srcset="./assets/img/contact-bg-2k.jpg">
+                        <source media="(min-width: 3840px)" srcset="./assets/img/contact-bg-4k.jpg">
+                        <img src="./assets/img/contact-bg-mob.jpg" alt="Futuristic visualization of digital interface"
+                            loading="lazy">
+                    </picture>
                 </div>
             </div>
         </section>
 
         <footer class="footer">
-            <div class="container footer__container">
-                <div class="footer__content">
-                    <div class="footer__title">
-                        <h2 class="footer__title-text" id="footer-title">Web Design & <br> Development Studio</h2>
-                        <img src="./assets/img/logo-footer.svg" alt="ArtWeb Logo" class="logo-img footer__logo">
-                    </div>
-                    <div class="footer__nav">
-                        <ul class="footer__list">
-                            <h3 class="footer__nav-title">Navigate</h3>
-                            <li class="footer__item">
-                                <a href="#" class="footer__link">Services</a>
-                            </li>
-                            <li class="footer__item">
-                                <a href="#" class="footer__link">Projects</a>
-                            </li>
-                            <li class="footer__item">
-                                <a href="#" class="footer__link">Contact Us</a>
-                            </li>
-                        </ul>
-                        <ul class="footer__contacts">
-                            <h3 class="footer__nav-title">Contacts</h3>
-                            <li class="footer__item">
-                                <a href="https://www.instagram.com/artwebdesignstudio?igsh=MWQ3a2k0amxyNTRscA%3D%3D&utm_source=qr" class="footer__contact-link">
-                                    <img src="./assets/img/instagram.svg" alt="instagram" class="footer__contact-icon">
-                                    instagram
-                                </a>
-                            </li>
-                            <li class="footer__item">
-                                <a href="mailto:studioartwebstudio@gmail.com" class="footer__contact-link">
-                                    <img src="./assets/img/email.svg" alt="Email" class="footer__contact-icon">
-                                    studioartwebstudio@gmail.com
-                                </a>
-                            </li>
-                        
-                        </ul>
+            <div class="footer__main">
+                <div class="container footer__container">
+                    <div class="footer__content">
+                        <div class="footer__brand">
+                            <h2 class="footer__title-text" id="footer-title">Web Design & <br> Development Studio</h2>
+                            <img src="./assets/img/logo-footer.svg" alt="ArtWeb Logo" class="footer__logo">
+                        </div>
+                        <nav class="footer__nav" aria-labelledby="footer-nav-title">
+                            <h3 class="footer__nav-title" id="footer-nav-title">Navigate</h3>
+                            <ul class="footer__list">
+                                <li class="footer__item">
+                                    <a href="#services" class="footer__link">Services</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="#projects" class="footer__link">Projects</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="#contact" class="footer__link">Contact Us</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="footer__contacts-block" aria-labelledby="footer-contacts-title">
+                            <h3 class="footer__nav-title" id="footer-contacts-title">Contacts</h3>
+                            <ul class="footer__contacts">
+                                <li class="footer__item">
+                                    <a href="https://www.instagram.com/artwebdesignstudio" class="footer__contact-link" target="_blank" rel="noopener noreferrer">
+                                        <img src="./assets/img/instagram.svg" alt="" class="footer__contact-icon">
+                                        instagram
+                                    </a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="mailto:studioartwebstudio@gmail.com" class="footer__contact-link">
+                                        <img src="./assets/img/email.svg" alt="" class="footer__contact-icon">
+                                        studioartwebstudio@gmail.com
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="footer__copyright">
-                <a href="./assets/privacypolicy.pdf" class="footer__copyright-link">Privacy Policy</a> 
+                <a href="./assets/privacypolicy.pdf" class="footer__copyright-link">Privacy Policy</a>
             </div>
         </footer>
     </main>
