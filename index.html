@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +11,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
     <header class="header">
         <div class="container">
             <a href="/" class="logo" aria-label="ArtWeb Home">
                 <img src="./assets/img/logo.svg" alt="ArtWeb Logo" class="logo-img">
-            </a>        
-            <button class="burger-menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
+            </a>
+            <button class="burger-menu" aria-label="Toggle navigation menu" aria-expanded="false"
+                aria-controls="main-nav">
                 <span class="burger-line"></span>
                 <span class="burger-line"></span>
                 <span class="burger-line"></span>
@@ -32,12 +35,9 @@
                 <li><a href="#contact" class="mobile-nav__link">Contact Us</a></li>
             </ul>
             <address class="mobile-nav__contact">
-                <a href="mailto:artwebdesigndevelopment@gmail.com" class="mobile-nav__email">
-                    <svg class="mobile-nav__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    artwebdesigndevelopment@gmail.com
+                <a href="mailto:studioartwebstudio@gmail.com" class="mobile-nav__email">
+                    <img src="./assets/img/email-burger.svg" alt="Email" class="mobile-nav__icon">
+                    studioartwebstudio@gmail.com
                 </a>
             </address>
             <a href="#contact" class="btn btn--primary mobile-nav__btn">Contact Us</a>
@@ -63,8 +63,152 @@
                 </div>
             </div>
         </section>
+
+        <section class="services" id="services" aria-labelledby="services-title">
+            <div class="container services__container">
+                <h2 class="services__title" id="services-title">Services</h2>
+
+                <div class="services__grid">
+                    <!-- Design Card -->
+                    <article class="service-card">
+                        <div class="service-card__image">
+                            <img src="./assets/img/services-bg-mobile-1.jpg"
+                                alt="Web design visualization with futuristic interface" loading="lazy">
+                        </div>
+                        <div class="service-card__content">
+                            <h3 class="service-card__title">Design</h3>
+                            <p class="service-card__description">
+                                We create web design that solves real user problems — intuitive, aesthetic, and crafted
+                                with attention to detail.
+                            </p>
+                            <ul class="service-card__tags" aria-label="Design services">
+                                <li><span class="tag">Web</span></li>
+                                <li><span class="tag">UI/UX</span></li>
+                                <li><span class="tag">Banner</span></li>
+                                <li><span class="tag">Poster</span></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Development Card -->
+                    <article class="service-card">
+                        <div class="service-card__image">
+                            <img src="./assets/img/services-bg-mobile-2.jpg"
+                                alt="Web development visualization with code and wireframe" loading="lazy">
+                        </div>
+                        <div class="service-card__content">
+                            <h3 class="service-card__title">Development</h3>
+                            <p class="service-card__description">
+                                We build websites that work flawlessly — fast, reliable, and tailored to your goals with
+                                clean, efficient code.
+                            </p>
+                            <ul class="service-card__tags" aria-label="Development services">
+                                <li><span class="tag">E-commerce</span></li>
+                                <li><span class="tag">Website</span></li>
+                                <li><span class="tag">Landing</span></li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects" id="projects" aria-labelledby="projects-title">
+            <div class="container projects__container">
+                <h2 class="projects__title" id="projects-title">Projects</h2>
+            </div>
+        </section>
+
+        <section class="contact" id="contact" aria-labelledby="contact-title">
+            <div class="container contact__container">
+                <div class="contact__content">
+                    <h2 class="contact__title" id="contact-title">Contact Us</h2>
+
+                    <form class="contact__form" action="#" method="POST" novalidate>
+                        <div class="form-group">
+                            <label for="full-name" class="sr-only">Full Name</label>
+                            <input type="text" id="full-name" name="full-name" class="form-input"
+                                placeholder="Full Name" required autocomplete="name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="sr-only">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="Number Phone"
+                                autocomplete="tel">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="sr-only">E-Mail</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="E-Mail" required
+                                autocomplete="email">
+                        </div>
+
+                        <div class="form-group form-group--checkbox">
+                            <input type="checkbox" id="consent" name="consent" class="form-checkbox" required>
+                            <label for="consent" class="form-checkbox-label">
+                                I agree to the processing of my personal data
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn--dark contact__submit">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact__image">
+                    <img src="./assets/img/contact-bg-mob.jpg" alt="Futuristic visualization of digital interface"
+                        loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container footer__container">
+                <div class="footer__content">
+                    <div class="footer__title">
+                        <h2 class="footer__title-text" id="footer-title">Web Design & <br> Development Studio</h2>
+                        <img src="./assets/img/logo-footer.svg" alt="ArtWeb Logo" class="logo-img footer__logo">
+                    </div>
+                    <div class="footer__nav">
+                        <ul class="footer__list">
+                            <h3 class="footer__nav-title">Navigate</h3>
+                            <li class="footer__item">
+                                <a href="#" class="footer__link">Services</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="#" class="footer__link">Projects</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="#" class="footer__link">Contact Us</a>
+                            </li>
+                        </ul>
+                        <ul class="footer__contacts">
+                            <h3 class="footer__nav-title">Contacts</h3>
+                            <li class="footer__item">
+                                <a href="https://www.instagram.com/artwebdesignstudio?igsh=MWQ3a2k0amxyNTRscA%3D%3D&utm_source=qr" class="footer__contact-link">
+                                    <img src="./assets/img/instagram.svg" alt="instagram" class="footer__contact-icon">
+                                    instagram
+                                </a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="mailto:studioartwebstudio@gmail.com" class="footer__contact-link">
+                                    <img src="./assets/img/email.svg" alt="Email" class="footer__contact-icon">
+                                    studioartwebstudio@gmail.com
+                                </a>
+                            </li>
+                        
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__copyright">
+                <a href="./assets/privacypolicy.pdf" class="footer__copyright-link">Privacy Policy</a> 
+            </div>
+        </footer>
     </main>
 
     <script src="./index.js"></script>
 </body>
+
 </html>
