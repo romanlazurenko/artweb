@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtWeb - Web Design & Development Studio</title>
+    <meta name="description" content="We create stylish and user-friendly websites that drive business growth">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo" aria-label="ArtWeb Home">
+                <img src="./assets/img/logo.svg" alt="ArtWeb Logo" class="logo-img">
+            </a>        
+            <button class="burger-menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="main-nav" aria-hidden="true">
+        <div class="mobile-nav__content">
+            <ul class="mobile-nav__list">
+                <li><a href="#services" class="mobile-nav__link">Services</a></li>
+                <li><a href="#projects" class="mobile-nav__link">Projects</a></li>
+                <li><a href="#contact" class="mobile-nav__link">Contact Us</a></li>
+            </ul>
+            <address class="mobile-nav__contact">
+                <a href="mailto:artwebdesigndevelopment@gmail.com" class="mobile-nav__email">
+                    <svg class="mobile-nav__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    artwebdesigndevelopment@gmail.com
+                </a>
+            </address>
+            <a href="#contact" class="btn btn--primary mobile-nav__btn">Contact Us</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero__background">
+                <!-- Video placeholder - add video here later -->
+                <div class="hero__overlay"></div>
+            </div>
+            <div class="container hero__container">
+                <div class="hero__content">
+                    <h1 class="hero__logo" id="hero-title">
+                        <img src="./assets/img/logo-hero.svg" alt="ArtWeb Logo" class="logo-img">
+                    </h1>
+                    <p class="hero__subtitle">Web Design & Development Studio</p>
+                    <p class="hero__tagline">
+                        We create stylish and user-friendly websites that drive business growth
+                    </p>
+                    <a href="#contact" class="btn btn--primary hero__btn">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="./index.js"></script>
+</body>
+</html>

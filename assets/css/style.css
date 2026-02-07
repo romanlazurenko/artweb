@@ -1,0 +1,415 @@
+/* ========================================
+   ArtWeb - Mobile First Stylesheet
+   ======================================== */
+
+/* CSS Custom Properties (Variables)
+   ======================================== */
+:root {
+    /* Colors */
+    --color-primary: #3d5a4c;
+    --color-primary-dark: #2d4a3c;
+    --color-secondary: #23332D;
+    --color-primary-light: #F5F5F5;
+    --color-white: #ffffff;
+    --color-overlay: rgba(45, 74, 60, 0.85);
+    
+    /* Typography */
+    --font-family: 'Raleway', sans-serif;
+    
+    /* Spacing */
+    --container-padding: 20px;
+    
+    /* Transitions */
+    --transition-default: 0.3s ease;
+}
+
+/* Reset & Base Styles
+   ======================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    font-weight: 400;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+address {
+    font-style: normal;
+}
+
+/* Typography Styles
+   ======================================== */
+
+/* H1 Mobile - 40px, 900, 100% line-height, 3% letter-spacing */
+.h1-mob,
+.hero__logo {
+    font-family: var(--font-family);
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0.03em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* H2 Mobile - 16px, 700, 16px line-height, 3% letter-spacing */
+.h2-mob,
+.hero__subtitle {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* H3 Bold - 18px, 700, 27px line-height, 3% letter-spacing */
+.h3-bold {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.03em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.hero__tagline {
+    font-family: var(--font-family);
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0.03em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Layout
+   ======================================== */
+.container {
+    width: 100%;
+    max-width: 390px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* Logo
+   ======================================== */
+.logo {
+    font-family: var(--font-family);
+    font-weight: 900;
+    font-size: 20px;
+    letter-spacing: 0.03em;
+    display: inline-block;
+}
+
+.logo-accent {
+    display: inline-block;
+    transform: rotate(180deg);
+}
+
+/* Header
+   ======================================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 15px 0;
+    background-color: color-mix(in srgb, var(--color-white) 80%, transparent);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Burger Menu Button
+   ======================================== */
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 110;
+}
+
+.burger-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-secondary);
+    border-radius: 2px;
+    transition: var(--transition-default);
+    transform-origin: center;
+}
+
+/* Burger menu animation - active state */
+.burger-menu.is-active .burger-line:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.burger-menu.is-active .burger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.is-active .burger-line:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile Navigation
+   ======================================== */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-primary);
+    z-index: 90;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-default), visibility var(--transition-default);
+}
+
+.mobile-nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    background-color: var(--color-secondary);
+}
+
+.mobile-nav__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    padding: 0 var(--container-padding);
+    width: 100%;
+    max-width: 390px;
+}
+
+.mobile-nav__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+    margin-bottom: 150px;
+}
+
+.mobile-nav__link {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.03em;
+    transition: opacity var(--transition-default);
+}
+
+.mobile-nav__link:hover,
+.mobile-nav__link:focus {
+    opacity: 0.8;
+}
+
+.mobile-nav__contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mobile-nav__email {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    transition: opacity var(--transition-default);
+}
+
+.mobile-nav__email:hover,
+.mobile-nav__email:focus {
+    opacity: 0.8;
+}
+
+.mobile-nav__icon {
+    width: 24px;
+    height: 24px;
+}
+
+.mobile-nav__btn {
+    width: 100%;
+    max-width: 350px;
+}
+
+/* Button Styles
+   ======================================== */
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 25px 40px;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    transition: var(--transition-default);
+}
+
+.btn--primary {
+    background-color: var(--color-primary-light);
+    color: var(--color-secondary);
+    border-radius: 100px;
+    max-width: 326px;
+}
+
+.btn--primary:hover,
+.btn--primary:focus {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Hero Section
+   ======================================== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.hero__background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-overlay);
+}
+
+.hero__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+.hero__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+}
+
+.hero__logo {
+    margin-bottom: 8px;
+}
+
+.hero__subtitle {
+    margin-bottom: 16px;
+}
+
+.hero__tagline {
+    max-width: 330px;
+    margin-bottom: 16px;
+}
+
+.hero__btn {
+    margin-top: 24px;
+    min-width: 326px;
+    border-radius: 100px;
+}
+
+/* Body scroll lock when menu is open
+   ======================================== */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Focus styles for accessibility
+   ======================================== */
+.burger-menu:focus-visible,
+.btn:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--color-white);
+    outline-offset: 2px;
+}
+
+/* Screen reader only utility
+   ======================================== */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
