@@ -31,7 +31,7 @@
             <!-- Desktop Social Links -->
             <div class="desktop-nav__social">
                 <a href="https://www.instagram.com/artwebdesignstudio" class="desktop-nav__social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                    <img src="./assets/img/instagram.svg" alt="" class="desktop-nav__social-icon">
+                    <img src="./assets/img/instagram.svg" alt="" class="desktop-nav__social-icon instagram-icon">
                 </a>
                 <a href="mailto:studioartwebstudio@gmail.com" class="desktop-nav__social-link" aria-label="Email">
                     <img src="./assets/img/email.svg" alt="" class="desktop-nav__social-icon">
@@ -149,8 +149,56 @@
         <section class="projects" id="projects" aria-labelledby="projects-title">
             <div class="container projects__container">
                 <h2 class="projects__title" id="projects-title">Projects</h2>
+                
+                <div class="projects__gallery">
+                    <figure class="gallery__item" data-index="0">
+                        <img src="./assets/img/projects/1.jpg" alt="Sally's Wedding Flowers website" loading="lazy">
+                    </figure>
+                    <figure class="gallery__item" data-index="1">
+                        <img src="./assets/img/projects/2.jpg" alt="Where Dreams Begin website" loading="lazy">
+                    </figure>
+                    <figure class="gallery__item" data-index="2">
+                        <img src="./assets/img/projects/3.jpg" alt="Retro wedding dresses" loading="lazy">
+                    </figure>
+                    <figure class="gallery__item" data-index="3">
+                        <img src="./assets/img/projects/4.jpg" alt="Gallery page design" loading="lazy">
+                    </figure>
+                    <figure class="gallery__item" data-index="4">
+                        <img src="./assets/img/projects/5.jpg" alt="Sally's brand logo" loading="lazy">
+                    </figure>
+                    <figure class="gallery__item" data-index="5">
+                        <img src="./assets/img/projects/6.jpg" alt="Love Story wedding dresses website" loading="lazy">
+                    </figure>
+                </div>
             </div>
         </section>
+
+        <!-- Lightbox Modal -->
+        <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
+            <div class="lightbox__backdrop"></div>
+            <button class="lightbox__close" aria-label="Close preview">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <button class="lightbox__nav lightbox__nav--prev" aria-label="Previous image">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="lightbox__nav lightbox__nav--next" aria-label="Next image">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 6 15 12 9 18"></polyline>
+                </svg>
+            </button>
+            <div class="lightbox__content">
+                <img class="lightbox__image" src="" alt="">
+            </div>
+            <div class="lightbox__counter">
+                <span class="lightbox__current">1</span> / <span class="lightbox__total">6</span>
+            </div>
+        </div>
 
         <section class="contact" id="contact" aria-labelledby="contact-title">
             <div class="container contact__container">
