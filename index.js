@@ -238,4 +238,77 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     };
+
+    // ========================================
+    // Service Cards - Click to Contact
+    // ========================================
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    serviceCards.forEach(card => {
+        // Click handler
+        card.addEventListener('click', (e) => {
+            // Don't navigate if clicking on a tag
+            if (e.target.closest('.tag')) return;
+            
+            // Smooth scroll to contact section
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+        
+        // Keyboard handler for accessibility
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+
+    // ========================================
+    // Scroll-triggered Animations
+    // ========================================
+    
+    // Check if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (!prefersReducedMotion) {
+        // Elements to animate
+        const animatedElements = document.querySelectorAll('.animate-on-scroll, .section-title-animate');
+        
+        // Intersection Observer options
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -50px 0px',
+            threshold: 0.1
+        };
+        
+        // Intersection Observer callback
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Optionally stop observing after animation
+                    // observer.unobserve(entry.target);
+                }
+            });
+        };
+        
+        // Create observer
+        const scrollObserver = new IntersectionObserver(observerCallback, observerOptions);
+        
+        // Observe all animated elements
+        animatedElements.forEach(element => {
+            scrollObserver.observe(element);
+        });
+    } else {
+        // If reduced motion is preferred, show all elements immediately
+        document.querySelectorAll('.animate-on-scroll, .section-title-animate').forEach(el => {
+            el.classList.add('is-visible');
+        });
+    }
 });
