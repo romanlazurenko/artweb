@@ -1695,13 +1695,17 @@ body.lightbox-open {
     }
 
     .footer__contacts {
-        margin-top: 16px;
+        margin-top: 24px;
         align-items: flex-start;
-        gap: 32px;
+        gap: 52px;
     }
 
     .footer__nav-title {
         text-align: left;
+    }
+
+    #footer-nav-title {
+       padding-left: 20px;
     }
 
     .footer__item {
@@ -2001,10 +2005,11 @@ body.lightbox-open {
     }
 
     .hero__btn {
-        max-width: 460px;
-        min-width: 460px;
-        padding: 32px 56px;
+        max-width: 320px;
+        min-width: 320px;
+        padding: 25px 56px;
         font-size: 24px;
+        margin-top: 52px;
     }
 
     /* Services */
@@ -2199,12 +2204,12 @@ body.lightbox-open {
         font-size: 18px;
         font-weight: 700;
         text-align: left;
-        margin-bottom: 20px;
+        margin-bottom: 34px;
     }
 
     .footer__contacts {
         align-items: flex-start;
-        gap: 24px;
+        gap: 40px;
         margin-top: 8px;
     }
 
