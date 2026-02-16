@@ -311,4 +311,134 @@ document.addEventListener('DOMContentLoaded', () => {
             el.classList.add('is-visible');
         });
     }
+
+    // ========================================
+    // Contact Form Validation & Submission
+    // ========================================
+    const contactForm = document.querySelector('.contact__form');
+    const formSuccess = document.querySelector('.form-success');
+    
+    if (contactForm) {
+        const fullNameInput = contactForm.querySelector('#full-name');
+        const phoneInput = contactForm.querySelector('#phone');
+        const emailInput = contactForm.querySelector('#email');
+        const consentCheckbox = contactForm.querySelector('#consent');
+        const submitBtn = contactForm.querySelector('.contact__submit');
+        
+        // Clear error state on input
+        const clearError = (input) => {
+            input.classList.remove('is-error');
+        };
+        
+        // Add error state
+        const setError = (input) => {
+            input.classList.add('is-error');
+        };
+        
+        // Validate email format
+        const isValidEmail = (email) => {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        };
+        
+        // Clear errors on input
+        [fullNameInput, phoneInput, emailInput].forEach(input => {
+            if (input) {
+                input.addEventListener('input', () => clearError(input));
+                input.addEventListener('focus', () => clearError(input));
+            }
+        });
+        
+        if (consentCheckbox) {
+            consentCheckbox.addEventListener('change', () => clearError(consentCheckbox));
+        }
+        
+        // Form submission
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            let hasErrors = false;
+            
+            // Validate Full Name
+            if (!fullNameInput.value.trim()) {
+                setError(fullNameInput);
+                hasErrors = true;
+            }
+            
+            // Validate Email
+            if (!emailInput.value.trim() || !isValidEmail(emailInput.value)) {
+                setError(emailInput);
+                hasErrors = true;
+            }
+            
+            // Validate Consent
+            if (!consentCheckbox.checked) {
+                setError(consentCheckbox);
+                hasErrors = true;
+            }
+            
+            if (hasErrors) {
+                // Shake animation for submit button on error
+                submitBtn.style.animation = 'shake 0.5s ease';
+                setTimeout(() => {
+                    submitBtn.style.animation = '';
+                }, 500);
+                return;
+            }
+            
+            // Disable submit button and show loading state
+            submitBtn.disabled = true;
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            
+            try {
+                // Submit form data to PHP backend
+                const formData = {
+                    'full-name': fullNameInput.value.trim(),
+                    'phone': phoneInput.value.trim(),
+                    'email': emailInput.value.trim(),
+                    'consent': consentCheckbox.checked
+                };
+                
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: JSON.stringify(formData),
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                // Handle response
+                let result;
+                const responseText = await response.text();
+                
+                try {
+                    result = JSON.parse(responseText);
+                } catch (e) {
+                    throw new Error('Invalid server response');
+                }
+                
+                if (response.ok && result.success) {
+                    // Show success message
+                    contactForm.style.display = 'none';
+                    formSuccess.hidden = false;
+                    
+                    // Reset form for future use
+                    contactForm.reset();
+                } else {
+                    throw new Error(result.error || 'Form submission failed');
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                // Show error state
+                submitBtn.textContent = 'Error. Try again';
+                submitBtn.disabled = false;
+                
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                }, 3000);
+            }
+        });
+    }
 });

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ArtWeb - Web Design & Development Studio</title>
     <meta name="description" content="We create stylish and user-friendly websites that drive business growth">
+    <link rel="icon" type="image/svg+xml" href="./assets/img/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap" rel="stylesheet">
@@ -205,7 +206,7 @@
                 <div class="contact__content animate-on-scroll">
                     <h2 class="contact__title" id="contact-title">Contact Us</h2>
 
-                    <form class="contact__form" action="#" method="POST" novalidate>
+                    <form class="contact__form" action="send-email.php" method="POST" novalidate>
                         <div class="form-group">
                             <label for="full-name" class="sr-only">Full Name</label>
                             <input type="text" id="full-name" name="full-name" class="form-input"
@@ -235,6 +236,18 @@
                             Submit
                         </button>
                     </form>
+
+                    <!-- Success State -->
+                    <div class="form-success" hidden>
+                        <p class="form-success__title">YOUR FORM HAS BEEN SUBMITTED.</p>
+                        <div class="form-success__icon">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="40" cy="40" r="38" stroke="var(--color-secondary)" stroke-width="4"/>
+                                <path d="M24 40L35 51L56 30" stroke="var(--color-secondary)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <p class="form-success__message">Thank you for your request.<br>We will be in touch shortly</p>
+                    </div>
                 </div>
 
                 <div class="contact__image animate-on-scroll delay-2">
